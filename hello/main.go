@@ -7,11 +7,11 @@ import (
 )
 
 func main() {
-	square := geometry.Square{A: geometry.Vertex{X: 0, Y:0}, B: geometry.Vertex{X: 1, Y: 1}}
+	square := geometry.Square{A: geometry.Vertex{X: 0, Y: 0}, B: geometry.Vertex{X: 1, Y: 1}}
 	fmt.Println(square.Perimeter())
 
 	const hello = "hello, world\n"
-	const a = 1;
+	const a = 1
 	if a < 2 {
 		fmt.Println("ahoj")
 	}
@@ -23,6 +23,9 @@ func main() {
 	fmt.Println(i)
 
 	primes := [6]int{2, 3, 5, 7, 11, 13}
+
+	fmt.Println(primes[:3])
+	fmt.Println(primes[3:])
 
 	for j, v := range primes {
 		v = 1
