@@ -21,6 +21,22 @@ func main() {
 
 	a, b := <-channel, <-channel
 	fmt.Println(a + b)
+
+	intChan := make(chan int)
+	intChan2 := make(chan int)
+	go s(intChan)
+	go s(intChan2)
+
+	select {
+	case <-intChan:
+		fmt.Println("prci prci")
+	case out := <-intChan2:
+		fmt.Println("prci prci2", out)
+	}
+}
+
+func s(ch chan int) {
+	ch <- 1
 }
 
 func sum(arr []int, ch chan int) {
